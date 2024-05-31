@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+        width=device-width: Diese Einstellung teilt dem Browser mit, 
+        dass die Breite des Viewports (der sichtbaren Bereich auf dem Bildschirm) 
+        der Breite des Geräts entsprechen soll. Auf diese Weise wird sichergestellt, 
+        dass die Webseite nicht breiter gerendert wird als der Bildschirm des Geräts, 
+        was für eine bessere Benutzererfahrung auf mobilen Geräten sorgt.
+        initial-scale=1.0: Diese Einstellung legt den initialen Zoom-Faktor der Webseite fest.
+        Ein Wert von 1.0 bedeutet, dass die Webseite beim Laden mit der ursprünglichen 
+        Zoomstufe angezeigt wird, ohne hinein- oder herausgezoomt zu werden.
+        Dies stellt sicher, dass die Webseite nicht automatisch hinein- oder 
+        herausgezoomt wird, was auf einigen Geräten zu einer 
+        unerwünschten Darstellung führen könnte
+    -->
+    <title>Lernprogramm</title>
+    <link rel="stylesheet" href="lernprogramms.css" />
+    <link rel="icon" sizes="128x128" href="manifest/icons/icon-128x128.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+      integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vexflow/1.2.88/vexflow-min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"
+      integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+      integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+  </head>
+  <body>
+    <header>Willkommen bei Quiz!</header>
+    <main>
+      <nav>
+        <ul id="navList">
+          <li><a href="#mathematik">Mathematik</a></li>
+          <li><a href="#internet">Internettechnologien</a></li>
+          <li><a href="#allgemein">Allgemeines Wissen</a></li>
+          <li><a href="#noten">Noten</a></li>
+          <li><a href="#extern">External</a></li>
+        </ul>
+        <div class="tasten">
+          <button id="restart" style="display: block">Neu Starten</button>
+        </div>
+      </nav>
+      <article>
+        <div id="überblick">
+          <p>
+            Hier geht es darum, ein Lernprogramm für drei verschiedene
+            Kategorien zu nutzen: (Mathematik, Internet-Technologie und
+            Allgemeinwissen) Jede Kategorie besteht aus mehreren Aufgaben. Um
+            eine Kategorie auszuwählen, nutzen Sie die Navigationsleiste auf der
+            linken Seite oder oben. <br />
+            Viel Spaß...!
+          </p>
+        </div>
+        <section id="aufgaben_container" style="display: none">
+          <h1 id="aufgaben_title"></h1>
+          <!-- Hier werden die Aufgaben für Mathematik angezeigt -->
+          <form>
+            <div id="aufgabenstellung"></div>
+          </form>
+          <div id="mathematik-task" style="display: block">
+            <div id="aufgabeStellung"></div>
+            <!-- Hier wird die ausgewählte Aufgabe für Mathematik angezeigt -->
+          </div>
+          <div id="mathematik-buttons">
+            <div id="tasten">
+              <button></button>
+              <button></button>
+              <button></button>
+              <button></button>
+            </div>
+            <!-- Hier werden die Antworttasten für Mathematik angezeigt -->
+          </div>
+        </section>
+      </article>
+      <aside>
+        Fortschrittsgrad:
+        <div id="bar">
+          <div id="progress-bar" value="0" max="100"></div>
+        </div>
+        <p id="progressText">Punkte:</p>
+      </aside>
+    </main>
+    <footer>&copy;Belegarbeit <span id="_2024">2024</span></footer>
+    <!-- JS Datei unten aufrufen, um die Seite erst aufzustellen, dann JS funktionieren lassen -->
+    <script type="text/javascript" src="lernprogramms.js"></script>
+  </body>
+</html>
